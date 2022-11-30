@@ -14,7 +14,7 @@ import com.asawda.faus.model.Employee;
 import com.asawda.faus.service.EmployeeService;
 
 @RestController
-@RequestMapping("/api") // pour accéder aux méthodes : localhost:8080/faus/api
+@RequestMapping("/api/employee") // pour accéder aux méthodes : localhost:8080/faus/api
 @CrossOrigin
 public class EmployeeController {
 

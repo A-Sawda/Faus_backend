@@ -6,10 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.asawda.faus.model.Employee;
 
-@RepositoryRestResource(path="rest") //de Spring Data REST, le chemin pour y accéder http://localhost:8080/faus/rest
+@RepositoryRestResource(path="employee_rest") //de Spring Data REST, le chemin pour y accéder http://localhost:8080/faus/rest
+@CrossOrigin(origins = "http://localhost:4200/") //pour autoriser notre appli angular uniquement à y accéder 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	
 	//List<Employee> findByFullNameEmployee(String nom);
