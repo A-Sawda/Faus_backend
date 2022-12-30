@@ -10,18 +10,19 @@ import com.asawda.faus.model.Employee;
 import com.asawda.faus.model.Job;
 
 @SpringBootApplication
-public class FausApplication implements CommandLineRunner /*Pour avoir id des produits dans la sortie de /rest*/ {
+public class FausApplication implements CommandLineRunner /* Pour avoir id dans la sortie de rest */ {
 
 	@Autowired
 	private RepositoryRestConfiguration repositoryRestConfiguration;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(FausApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Employee.class,Job.class); //Retourne moi l'id pour les objets de type employee
+		repositoryRestConfiguration.exposeIdsFor(Employee.class, Job.class); // Retourne moi l'id pour les objets de
+																				// type employee et job
 	}
 
 }
